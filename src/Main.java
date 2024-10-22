@@ -8,7 +8,7 @@
  */
 
 
-//import java.util.Scanner;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Dictionary dictionary = new Dictionary();
@@ -17,7 +17,7 @@ public class Main {
 
         System.out.println(dictionary);
 
-        Word[] words = {
+        Word[] words1 = {
                 new Word("dog", "собака"),
                 new Word("cat", "кот"),
                 new Word("book", "книга"),
@@ -25,7 +25,7 @@ public class Main {
                 new Word("school", "школа", "'opus'", "'pruklad'")
 
         };
-        Dictionary dictionary2= new Dictionary(words);
+       /* Dictionary dictionary2= new Dictionary(words);
         dictionary2.addWords(new Word("world","слово"));
         System.out.println(dictionary2);
 
@@ -34,12 +34,12 @@ public class Main {
 
         dictionary2.changeDesription("dog","description for dog");
         System.out.println(dictionary2);
-
+*/
       /*  //peredat' zna4enie null
         Word word = new Word("gwe","gytr");
         word.setExample("hhhff");*/
 
-       /* Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         Word[] words = {
                 new Word("dog", "собака"),
                 new Word("cat", "кот"),
@@ -62,7 +62,7 @@ public class Main {
                 new Word("garden", "сад"),
                 new Word("carpet", "ковер")
         };
-        Dictionary dictionary = new Dictionary(words);
+        Dictionary dictionary1= new Dictionary(words);
         System.out.println(words);
 
 
@@ -88,6 +88,6 @@ public class Main {
                 System.out.println(dictionary);
             }
             System.out.println("-----------------------------------------------------------");
-        }*/
+        }
     }
 }

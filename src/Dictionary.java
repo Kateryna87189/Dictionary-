@@ -1,48 +1,44 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Dictionary {
-    Word[] words;
-    private int size = 0;
+    //Word[] words;
+   private List<Word> words = new ArrayList<>();
+  private int size;
 
     public Dictionary() {
-        words = new Word[5];
     }
 
-    public Dictionary(Word[] words) {
-        this.words = words;
-        size = words.length;
+    // public Dictionary() {
+   /*     words = new Word[5];
     }
-
-    public void addWords(Word word) {
-        //збільшуєм масів
-        if (size >= words.length) {
-            enlargeWords();
-        }
-        words[size] = word;
-        size++;
-    }
-
-    private void enlargeWords() {
-        Word[] newWords = new Word[words.length * 2];
-
+*/
+    public Dictionary(Word []words) {
+        this.size = size;
         for (int i = 0; i < words.length; i++) {
-            newWords[i] = words[i];
+            this.words.add(words[i]);
         }
-        words = newWords;
     }
+
+   public void addWords(Word word) {
+       words.add(word);
+    }
+
 
 
     public String translation(String value) {
-        for (int i = 0; i < words.length; i++) {
-            if (words[i].getValue().equalsIgnoreCase(value)) {
-                return words[i].getTranslation();
+        for (int i = 0; i < words.size(); i++) {
+            if (words.get(i).getValue().equalsIgnoreCase(value)) {
+                return words.get(i).getTranslation();
             }
         }
         return "";
     }
 
     public String getWordByTranslation(String translation) {
-        for (int i = 0; i < words.length; i++) {
-            if (words[i].getTranslation().equalsIgnoreCase(translation)) {
-                return words[i].getValue();
+        for (int i = 0; i < words.size(); i++) {
+            if (words.get(i).getTranslation().equalsIgnoreCase(translation)) {
+                return words.get(i).getValue();
             }
         }
         return "";
@@ -50,16 +46,16 @@ public class Dictionary {
 
     public String toString() {
         String result = "";
-        for (int i = 0; i < words.length; i++) {
-            result += words[i] + System.lineSeparator();  // \n
+        for (int i = 0; i < words.size(); i++) {
+            result += words.get(i) + System.lineSeparator();  // \n
         }
         return result;
     }
 //wukae kartku jaky nam treba zminutu
     public Word find(String value) {
         for (int i = 0; i < size; i++) {
-            if (words[i].getValue().equalsIgnoreCase(value)) {
-                return words[i];
+            if (words.get(i).getValue().equalsIgnoreCase(value)) {
+                return words.get(i);
             }
 
         }
