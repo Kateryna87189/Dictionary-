@@ -1,69 +1,27 @@
+import java.util.Scanner;
 
 /*
-в проекте про словарь добавить возможность добавления словарной карточки в словарь,
-т.е. в классе Dictionary реализовать "рост" массива
+Задача 3
+Давайте напишим небольшой англо-русский (или англо-немецкий, или немецко-украинский ….. выберете сами) словарь.
+Создайте класс Word. В нем должно быть 2 поля:
+слово
+значение (перевод)
+Создайте класс Dictionary (словарь), который должен содержать поле - массив слов.
+(Кстати, массив слов можно передать в конструкторе класса Dictionary или задать прямо в классе, как мы делали на уроке с рецептами).
+Вы можете написать два метода 1) метод который ищет перевод по заданному слову 2) мето, который ищет слово, по заданному переводу.
+Все, что вам остается, реализовать диалог с пользователем, где ему предлагается выбрать направление перевода и ввести слово для перевода. Система должна либо вывести перевод, либо сказать, что такого слова в словаре нет.
 
-Совет: сначала как на уроке реализуйте создание Dictionary с "пустым" массивом,
-и научите класс делать addWord последовательно заполняя массив.
  */
-
-
-import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Dictionary dictionary = new Dictionary();
-        dictionary.addWords(new Word("shop","магазин"));
-        dictionary.addWords(new Word("phone","телефон","'[f:one]'"));
-
-        System.out.println(dictionary);
-
-        Word[] words1 = {
-                new Word("dog", "собака"),
-                new Word("cat", "кот"),
-                new Word("book", "книга"),
-                new Word("table", "стол", "'opus'"),
-                new Word("school", "школа", "'opus'", "'pruklad'")
-
-        };
-       /* Dictionary dictionary2= new Dictionary(words);
-        dictionary2.addWords(new Word("world","слово"));
-        System.out.println(dictionary2);
-
-        dictionary2.changeWordCard("dog","description for dog "," dog eat sosidg");
-        System.out.println(dictionary2);
-
-        dictionary2.changeDesription("dog","description for dog");
-        System.out.println(dictionary2);
-*/
-      /*  //peredat' zna4enie null
-        Word word = new Word("gwe","gytr");
-        word.setExample("hhhff");*/
-
         Scanner scanner = new Scanner(System.in);
         Word[] words = {
                 new Word("dog", "собака"),
                 new Word("cat", "кот"),
                 new Word("book", "книга"),
-                new Word("table", "стол"),
-                new Word("school", "школа"),
-                new Word("chair", "стул"),
-                new Word("bad", "кровать"),
-                new Word("blanket", "одеяло"),
-                new Word("wardrobe", "шкаф"),
-                new Word("toe", "носок"),
-                new Word("programmer", "программист"),
-                new Word("computer", "компьютер"),
-                new Word("notebook", "тетрадь"),
-                new Word("pan", "ручка"),
-                new Word("cap", "шапка"),
-                new Word("fur coat", "шуба"),
-                new Word("winter", "зима"),
-                new Word("summer", "лето"),
-                new Word("garden", "сад"),
-                new Word("carpet", "ковер")
+                new Word("table", "стол")
         };
-        Dictionary dictionary1= new Dictionary(words);
-        System.out.println(words);
+        Dictionary dictionary = new Dictionary(words);
 
 
 
